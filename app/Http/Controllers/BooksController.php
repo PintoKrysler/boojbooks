@@ -37,5 +37,23 @@ class BooksController extends Controller
     	// $review->book_id=
     }
 
+    public function edit(Book $book){
+    	//return $book;
+    	return view('books.edit', ['book'=>$book] );
+    }
+
+    public function update(Request $request,Book $book){
+
+    	// Update book    	
+    	$book->update([
+    		'title'=>$request->title,
+    		'author'=>$request->author,
+    		'publication_date'=>$request->publication_date,
+    	]);
+    	return back();
+    	// $review = new Review();
+    	// $review->body = $request->body;
+    	// $review->book_id=
+    }
 
 }

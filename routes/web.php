@@ -33,3 +33,7 @@ Route::get('books/{book}','BooksController@show');
 Route::post('books','BooksController@add');
 
 Route::post('books/{book}/reviews','ReviewsController@add');
+
+Route::get('books/{book}/edit','BooksController@edit');
+
+Route::patch('books/{book}','BooksController@update');
