@@ -23,7 +23,11 @@ class BooksController extends Controller
 
     public function add(Request $request ){
     	//return request()->all();
-    	
+    	$this->validate($request,[
+    		'title'=>'required',
+    		'author'=>'required',
+    		'publication_date'=>'required',
+    	]);
     	// Add a new book to collection of books
     	$new_book = new Book;
     	$new_book->title = $request->title;

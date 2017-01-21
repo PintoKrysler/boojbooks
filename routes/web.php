@@ -11,8 +11,7 @@
 |
 */
 
-//Controller
-Route::get('/', 'PagesController@home');
+
 
 // Route::get('books', function () {
 // 	$books = ['Harry Potter','Fifty Shades of Gray','Magicitians','Eat Pray Love'];
@@ -25,15 +24,18 @@ Route::get('/', 'PagesController@home');
 //     return view('pages/books',compact('books'));
 // });
 // 
+Route::group(['middleware' => ['web']] , function(){
+	Route::get('/', 'PagesController@home');
 
-Route::get('books', 'BooksController@index');
+	Route::get('books', 'BooksController@index');
 
-Route::get('books/{book}','BooksController@show');
+	Route::get('books/{book}','BooksController@show');
 
-Route::post('books','BooksController@add');
+	Route::post('books','BooksController@add');
 
-Route::post('books/{book}/reviews','ReviewsController@add');
+	Route::post('books/{book}/reviews','ReviewsController@add');
 
-Route::get('books/{book}/edit','BooksController@edit');
+	Route::get('books/{book}/edit','BooksController@edit');
 
-Route::patch('books/{book}','BooksController@update');
+	Route::patch('books/{book}','BooksController@update');
+});
