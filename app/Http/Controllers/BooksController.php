@@ -60,4 +60,10 @@ class BooksController extends Controller
     	// $review->book_id=
     }
 
+    public function sort(String $field,String $order){
+    	$books = DB::table('books')->orderBy($field, $order)->get();
+
+    	return view('books.index',compact('books'));
+    }
+
 }
