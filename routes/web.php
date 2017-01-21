@@ -29,3 +29,7 @@ Route::get('/', 'PagesController@home');
 Route::get('books', 'BooksController@index');
 
 Route::get('books/{book}','BooksController@show');
+
+Route::post('books','BooksController@add');
+
+Route::post('books/{book}/reviews','ReviewsController@add');
