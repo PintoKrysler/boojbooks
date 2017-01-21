@@ -37,6 +37,8 @@ Route::group(['middleware' => ['web']] , function(){
 
 	Route::get('books/{book}/edit','BooksController@edit');
 
+	Route::post('books/order/{orderlist}','BooksController@updateorder');
+
 	Route::get('books/sort/{field}/{order}','BooksController@sort');
 
 	Route::patch('books/{book}','BooksController@update');

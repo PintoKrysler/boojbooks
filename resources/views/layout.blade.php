@@ -8,10 +8,14 @@
         <title>Laravel</title>
         <link href="{{ elixir('css/app.css') }}" rel="stylesheet" type="text/css">
         
+        <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css">
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
+        <script
+      src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"
+      integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+      crossorigin="anonymous"></script>
         <!-- Styles -->
         <style>
             html, body {
@@ -35,4 +39,5 @@
         </div>
 
     </body>
+    <script type="text/javascript" src="{{ asset('js/books.js') }}"></script>
 </html>

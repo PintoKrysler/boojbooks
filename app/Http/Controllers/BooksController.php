@@ -9,8 +9,8 @@ use App\Review;
 class BooksController extends Controller
 {
     public function index(){
-    	$books = Book::all();
-    	//$books = DB::table('books')->get();
+    	//$books = Book::all();
+    	$books = DB::table('books')->orderBy('sort', 'ASC')->get();
     	return view('books.index',compact('books'));
     }
 
@@ -33,12 +33,10 @@ class BooksController extends Controller
     	$new_book->title = $request->title;
     	$new_book->author=$request->author;
     	$new_book->publication_date=$request->publication_date;
-    	
+    	$new_book->sort=DB::table('books')->count() + 1;
     	$new_book->save();
+
     	return back();
-    	// $review = new Review();
-    	// $review->body = $request->body;
-    	// $review->book_id=
     }
 
     public function edit(Book $book){
@@ -55,15 +53,21 @@ class BooksController extends Controller
     		'publication_date'=>$request->publication_date,
     	]);
     	return back();
-    	// $review = new Review();
-    	// $review->body = $request->body;
-    	// $review->book_id=
     }
 
     public function sort(String $field,String $order){
     	$books = DB::table('books')->orderBy($field, $order)->get();
-
     	return view('books.index',compact('books'));
+    }
+
+    public function updateorder(String $orderlist){
+    	$list = explode(',', $orderlist);
+
+    	foreach ($list as $order => $book_id) {
+    		// Update sort value of each book
+    		DB::table('books')->where('id',$book_id)->update(['sort'=>$order]);
+    	}
+    	
     }
 
 }

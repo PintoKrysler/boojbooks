@@ -4,17 +4,17 @@
 	<div class="row">
 		<div class="col-md-6 col-md-offset-3">
 			<h1>Books:</h1>
-			<table class="table">
+			<table class="table" id="books_list">
 				<thead>
 			      <tr>
 			        <th>Title</th>
-			        <th>Author <a href="/books/sort/author/desc"><span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true" style="float:right"></span></a><a href="/books/sort/author/asc"><span class="glyphicon glyphicon-triangle-top " aria-hidden="true" style="float:right"></span></a></th>
+			        <th>Author <a href="/books/sort/author/desc"><span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true" ></span></a><a href="/books/sort/author/asc"><span class="glyphicon glyphicon-triangle-top " aria-hidden="true" ></span></a></th>
 			      </tr>
 			    </thead>
 			    <tbody>
 			    	@foreach ($books as $book)
-				    	<tr>
-				    		<td><a href="/books/{{ $book->id }}"> {{ $book->title }} </a></td>
+				    	<tr id="{{ $book->id }}">
+				    		<td><a href="/books/{{ $book->id }}"> {{ $book->title }}</a></td>
 				    		<td>{{ $book->author }}</td>
 				    	</tr>
 				    @endforeach
