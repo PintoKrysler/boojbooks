@@ -25,3 +25,17 @@ $('#books_container .x_cancel').on('click',function(){
 	$('#books_container .x_add_book').show();
 	$('#books_container').addClass('form_invisible');
 });
+
+$("#books_list tr").on('click',function(){
+	var id = $(this).attr('id');
+	window.location='/books/'+id;
+});
+
+$(".x_edit_book").on('click',function(){
+	var id = $(this).data('id');
+	window.location='/books/'+id+'/edit';
+});
+
+$(".x_cancel_edit").on('click',function(){
+	window.location='/books/';
+});

@@ -50,7 +50,7 @@
 			    <tbody>
 			    	@foreach ($books as $book)
 				    	<tr id="{{ $book->id }}">
-				    		<td><a href="/books/{{ $book->id }}"> {{ $book->title }}</a></td>
+				    		<td>{{ $book->title }}</td>
 				    		<td>{{ $book->author }}</td>
 				    	</tr>
 				    @endforeach

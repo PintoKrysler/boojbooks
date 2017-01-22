@@ -3,9 +3,11 @@
 @section('content')
 	<div class="row">
 		<div class="col-md-6 col-md-offset-3">
+			<button class="btn btn-default glyphicon glyphicon-pencil x_edit_book" data-id="{{$book->id}}" style="float: right;margin-top: 20px"></button>
 	    	<h1>{{ $book->title }}</h1>
 	    	<h3>Author : {{ $book->author }}</h3>
 	    	<h3>Publication Date : {{ $book->publication_date }}</h3>
+	    	<h3>Reviews:</h3>
 	    	<ul class="list-group">
 		    	@foreach ($book->reviews as $review)
 		    		<li class="list-group-item">{{ $review->body }}</li>

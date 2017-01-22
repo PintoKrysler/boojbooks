@@ -15,6 +15,7 @@
 		    	</div>
 		    	<div class="form-group">
 		    		<button type="submit" class="btn btn-primary">Update Book</button>
+		    		<span  class="btn x_cancel_edit">Cancel</span>
 		    	</div>
 		    	
 		    </form>
