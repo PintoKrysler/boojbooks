@@ -7,7 +7,7 @@
 
         <title>Laravel</title>
         <link href="{{ elixir('css/app.css') }}" rel="stylesheet" type="text/css">
-        
+        <link href="{{ elixir('css/books.css') }}" rel="stylesheet" type="text/css">
         <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css">
         <!-- Fonts -->

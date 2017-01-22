@@ -15,3 +15,13 @@ $('#books_list tbody').sortable({
 
 	}
 });
+
+$('#books_container .x_add_book').on('click',function(){
+	$(this).hide();
+	$('#books_container').removeClass('form_invisible');
+});
+
+$('#books_container .x_cancel').on('click',function(){
+	$('#books_container .x_add_book').show();
+	$('#books_container').addClass('form_invisible');
+});
