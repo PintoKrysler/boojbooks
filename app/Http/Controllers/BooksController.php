@@ -5,7 +5,6 @@ use DB;
 use Illuminate\Http\Request;
 use App\Book;
 use App\Review;
-use GuzzleHttp\Client;
 
 class BooksController extends Controller
 {
@@ -109,19 +108,5 @@ class BooksController extends Controller
     	}
     }
 
-    public function apisearch(String $search){
-
-		$client = new Client([
-		    // Base URI is used with relative requests
-		    'base_uri' => 'http://httpbin.org',
-		    // You can set any number of default request options.
-		    'timeout'  => 2.0,
-		]);
-
-		$client = new GuzzleHttp\Client(['base_uri' => 'https://www.googleapis.com/books/v1']);
-		// Send a request to https://foo.com/api/test
-		$response = $client->request('GET', 'volumes?q='.$search);
-		return $response;
-	}
 
 }

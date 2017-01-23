@@ -10,6 +10,7 @@
 				This site was created using Laravel framework. It allows the user to perform the following actions:
 				<ul class="list-group">
 		            <li class="list-group-item">Add a Book</li>
+		            <li class="list-group-item">Search and Add a Book using Google Books API</li>
 		            <li class="list-group-item">Display a book detail</li>
 		           	<li class="list-group-item">Edit a Book description</li>
 		           	<li class="list-group-item">Change the order of the books</li>

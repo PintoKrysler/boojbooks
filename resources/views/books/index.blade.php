@@ -5,8 +5,15 @@
 		<div class="col-md-6 col-md-offset-3">
 			<h1>Books:</h1> <span class="x_add_book btn btn-primary" >Add a Book!</span>
 			<div class="x_new_form">
-				<h3>Add new Book</h3>
-			    <form method="POST" accept-charset="utf-8" action="books">
+				<h3>Add a new Book</h3>
+				<h6>You can search a book by title or add the book description.</h6>
+				
+					<div class="form-group">
+					<select name="title" class="form-control x_search_book js-example-basic-single" style="width:100%">
+					</select>
+					</div>
+
+			    <form method="POST" accept-charset="utf-8" action="books" id="form_new_book">
 			    	<div class="form-group">
 			    		<input type="hidden" name="_token" value="{{ csrf_token() }}">
 						<label for="title">Title</label>
@@ -18,7 +25,7 @@
 			    	</div>
 			    	<div class="form-group">
 			    		<label for="publication_date">Publication Date</label>
-			    		<input name="publication_date" class="form-control" placeholder="Publication date" type="date"></input>
+			    		<input name="publication_date" id="date" class="form-control" placeholder="Publication date" type="date"></input>
 			    	</div>
 			    	<div class="form-group">
 			    		
