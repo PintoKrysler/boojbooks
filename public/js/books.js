@@ -39,3 +39,8 @@ $(".x_edit_book").on('click',function(){
 $(".x_cancel_edit").on('click',function(){
 	window.location='/books/';
 });
+
+$(".x_checkitout").on('click',function(){
+	console.log('here');
+	window.location='/books';
+});

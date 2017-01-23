@@ -25,9 +25,11 @@
 // });
 // 
 Route::group(['middleware' => ['web']] , function(){
-	Route::get('/', 'PagesController@home');
+	Route::get('/', 'BooksController@home');
 
 	Route::get('books', 'BooksController@index');
+
+	Route::get('books/api/{search}','BooksController@apisearch');
 
 	Route::get('books/{book}','BooksController@show');
 
@@ -42,4 +44,6 @@ Route::group(['middleware' => ['web']] , function(){
 	Route::get('books/sort/{field}/{order}','BooksController@sort');
 
 	Route::patch('books/{book}','BooksController@update');
+
+
 });
